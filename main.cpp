@@ -1,11 +1,11 @@
 
-#include "rtweekend.h"
 #include "camera.h"
-#include "hittable.h"
+#include "rtweekend.h"
 #include "hittable_list.h"
 #include "sphere.h"
-
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 
 int main() {
     hittable_list world;
@@ -19,5 +19,11 @@ int main() {
     cam.image_width  = 400;
     cam.samples_per_pixel = 100;
     
+    auto start = high_resolution_clock::now();
     cam.render(world);
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<milliseconds>(stop - start);
+    std::clog << "Render Time (C++): " << duration.count() << " milliseconds" << std::endl;
+
 }
