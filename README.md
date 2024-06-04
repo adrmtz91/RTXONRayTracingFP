@@ -88,7 +88,7 @@ To render the scene using the C++ implementation:
     ```
 The output images will be saved as output_cuda.png and output_cpu.png respectively.
 
-<font size="5">Results</font>
+## <font size="5">Results</font>
 Below are the images rendered using the CUDA and C++ implementations:
 
 <font size="4">CUDA Rendered Image</font>
