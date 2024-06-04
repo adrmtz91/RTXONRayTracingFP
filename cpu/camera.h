@@ -3,7 +3,7 @@
 
 #include "rtweekend.h"
 #include "hittable.h"
-
+#include <fstream>
 class camera {
     public:
     double aspect_ratio = 1.0;  // Ratio of image width over height
@@ -12,8 +12,8 @@ class camera {
 
     void render(const hittable& world) {
         initialize();
-
-        std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
+        std::ofstream output_file("output_cpu.ppm");
+        output_file << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
         for (int j = 0; j < image_height; j++) {
             std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
@@ -23,10 +23,10 @@ class camera {
                     ray r = get_ray(i, j);
                     pixel_color += ray_color(r, world);
                 }
-                write_color(std::cout, pixel_samples_scale * pixel_color);
+                write_color(output_file, pixel_samples_scale * pixel_color);
             }
         }
-        
+        output_file.close();
         std::clog << "\rDone.                 \n";
     }
 
