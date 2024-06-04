@@ -23,7 +23,6 @@ int main() {
     cam.render(world);
     auto stop = high_resolution_clock::now();
 
-    auto duration = duration_cast<milliseconds>(stop - start);
+    auto duration = duration_cast<::duration<float, milli>>(stop - start);
     std::clog << "Render Time (C++): " << duration.count() << " milliseconds" << std::endl;
-
 }
