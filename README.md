@@ -37,6 +37,7 @@ The render times for both the C++ implementation and the CUDA implementation are
 
 - **Render Time (C++):** 4604.66 milliseconds
 - **Render Time (CUDA):** 157.959 milliseconds
+  
 This significant reduction in render time demonstrates the effectiveness of using CUDA for accelerating the ray tracing process.
 
 ## <font size="5">Acknowledgments</font>
