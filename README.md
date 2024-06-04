@@ -91,9 +91,11 @@ The output images will be saved as output_cuda.png and output_cpu.png respective
 Below are the images rendered using the CUDA and C++ implementations:
 
 <font size="4">CUDA Rendered Image</font>
+
 ![CUDA Rendered Image](images/output_cuda.png)
 
 <font size="4">C++ Rendered Image</font>
+
 ![C++ Rendered Image](images/output_cpu.png)
 
 As seen in the images, the CUDA implementation provides comparable quality while significantly reducing the render time.
